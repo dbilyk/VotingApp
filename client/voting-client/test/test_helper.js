@@ -2,7 +2,9 @@ import jsdom from 'jsdom'
 import chai from 'chai'
 import chaiImmutable from 'chai-immutable'
 
-
+process.env.BABEL_ENV = 'test';
+process.env.NODE_ENV = 'test';
+process.env.PUBLIC_URL = '';
 const doc = jsdom.jsdom('<!doctype html><html><body></body></html>')
 const win = doc.defaultView
 global.document = doc
