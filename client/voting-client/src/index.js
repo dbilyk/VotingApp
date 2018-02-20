@@ -9,6 +9,10 @@ import { env } from 'jsdom/lib/jsdom';
 
 
 const pair = ["trainspot", "stuff"]
-ReactDOM.render(<Voting pair={pair} />,
+ReactDOM.render(
+  <Voting
+    pair={pair}
+    winner="trainspot"
+    hasVoted="trainspot" />,
   document.getElementById('root'));
 registerServiceWorker();
