@@ -122,33 +122,24 @@ describe("application logic", () => {
   describe("vote", () => {
     it("creates a new tally object if none exists", () => {
       const state = Map({
-        vote: Map(
-          {
-            pair: List.of("1", '2')
-          }),
-        entries: List()
+        pair: List.of("1", '2')
       })
 
       const nextState = vote(state, "1")
 
       expect(nextState).to.eq(Map({
-        vote: Map({
-          pair: List.of("1", "2"),
-          tally: Map({ "1": 1 })
-        }),
-        entries: List()
+        pair: List.of("1", "2"),
+        tally: Map({ "1": 1 })
       }))
 
     })
 
     it("increments an existing entry", () => {
       const state = Map({
-        vote: Map({
-          pair: List.of("1", "2"),
-          tally: Map({
-            "1": 1,
-            "2": 1
-          })
+        pair: List.of("1", "2"),
+        tally: Map({
+          "1": 1,
+          "2": 1
         })
       })
 
@@ -156,12 +147,10 @@ describe("application logic", () => {
 
       expect(nextState).to.equal(
         Map({
-          vote: Map({
-            pair: List.of("1", "2"),
-            tally: Map({
-              "1": 2,
-              "2": 1
-            })
+          pair: List.of("1", "2"),
+          tally: Map({
+            "1": 2,
+            "2": 1
           })
         })
       )
